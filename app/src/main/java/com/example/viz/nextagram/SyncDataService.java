@@ -16,14 +16,14 @@ public class SyncDataService extends Service {
     private TimerTask mTask;
     private Timer mTimer;
     private Proxy proxy; // 서버에서 Article들을 받아옴
-    private  Dao dao; // 받아온 Article들을 DB에 저장
+    private ProviderDao dao; // 받아온 Article들을 DB에 저장
 
     @Override
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "onCreate");
         proxy = new Proxy(getApplicationContext());
-        dao = new Dao(getApplicationContext());
+        dao = new ProviderDao(getApplicationContext());
     }
 
     @Override

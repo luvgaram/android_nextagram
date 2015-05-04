@@ -33,7 +33,7 @@ public class ArticleView extends Activity {
 
         String articleNumber = getIntent().getExtras().getString("ArticleNumber");
 
-        Dao dao = new Dao(getApplicationContext());
+        ProviderDao dao = new ProviderDao(getApplicationContext());
         ArticleDTO article = dao.getArticleByArticleNumber(Integer.parseInt(articleNumber));
 
         tvTitle.setText(article.getTitle());

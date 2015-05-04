@@ -3,6 +3,7 @@ package com.example.viz.nextagram;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,7 +55,6 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         // 서버에서 데이터를 가져와서 db에 넣는 부분
         refreshData();
         // db로부터 게시판 글을 가져와서 리스트에 넣는 부분
-        listView(); // refreshData()에서 서버에서 json과 이미지 파일 가져오는 작업이 비동기기 때문에 이게 먼저 실행되기 때문에 처음 화면에 화면에 아무것도 안 보임
     }
 
     private void refreshData() {
@@ -63,9 +63,10 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
             public void onSuccess(int i, Header[] headers, byte[] bytes) {
                 String jsonData = new String(bytes);
                 Log.i("getJSonData", "success: " + jsonData);
-                Dao dao = new Dao(getApplicationContext());
+                ProviderDao dao = new ProviderDao(getApplicationContext());
                 dao.insertJsonData(jsonData);
-                listView();
+                // HomeViewAdapter를 CursorAdapter로 변경
+                listView(dao.getArticleList());
             }
 
             @Override
@@ -76,11 +77,21 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
 
     }
 
-    private void listView() {
-        Dao dao = new Dao(getApplicationContext());
-        articleList = dao.getArticleList();
-        HomeViewAdapter customAdapter = new HomeViewAdapter(this, R.layout.custom_list_row, articleList);
+    private void listView(ArrayList<ArticleDTO> arrayList) {
         ListView listView = (ListView) findViewById(R.id.customlist_listview);
+
+        Cursor mCursor = getContentResolver().query(
+                NextagramContract.Articles.CONTENT_URI,
+                NextagramContract.Articles.PROJECTION_ALL, null, null,
+                NextagramContract.Articles._ID + " asc"
+        );
+
+        HomeViewAdapter customAdapter = new HomeViewAdapter(this, mCursor, R.layout.custom_list_row);
+
+//        Dao dao = new Dao(getApplicationContext());
+//        articleList = dao.getArticleList();
+//        HomeViewAdapter customAdapter = new HomeViewAdapter(this, R.layout.custom_list_row, articleList);
+//        ListView listView = (ListView) findViewById(R.id.customlist_listview);
         listView.setAdapter(customAdapter);
         listView.setOnItemClickListener(this);
     }
@@ -90,12 +101,10 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         switch (arg0.getId()) {
             case R.id.button1:
                 Intent intentWrite = new Intent(".WritingArticleView");
-//                Intent intentWrite = new Intent(arg0.getContext(), WritingArticleView.class);
                 startActivity(intentWrite);
                 break;
             case R.id.button2:
                 refreshData();
-                listView();
                 break;
         }
     }
@@ -103,13 +112,10 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(".ArticleView");
-        String articleNumber = articleList.get(position).getArticleNumber() + "";
-        intent.putExtra("ArticleNumber", articleNumber);
-        startActivity(intent);
-
-//        Intent intentView = new Intent(view.getContext(), ArticleView.class);
 //        String articleNumber = articleList.get(position).getArticleNumber() + "";
-//        intentView.putExtra("ArticleNumber", articleNumber);
-//        startActivity(intentView);
+//        intent.putExtra("ArticleNumber", articleNumber);
+        intent.putExtra("ArticleNumber", ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
+        Log.i("test", "ArticleNumber: " + ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
+        startActivity(intent);
     }
 }
