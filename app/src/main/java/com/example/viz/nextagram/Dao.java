@@ -18,6 +18,7 @@ import java.util.ArrayList;
 public class Dao {
     private Context context;
     private SQLiteDatabase database;
+    private SharedPreferences sharedPreferences;
 
     public Dao(Context context) {
         this.context = context;
@@ -41,7 +42,9 @@ public class Dao {
     }
 
     public void insertJsonData(String jsonData) {
-        JSONArray jArr;
+        // 예외처리.. 용빈이꺼는 필요 없던데 왜 이러는지...;
+        if (jsonData == null) { return; }
+
         int articleNumber;
         String title;
         String writer;
@@ -49,12 +52,11 @@ public class Dao {
         String content;
         String writeDate;
         String imgName;
-        SharedPreferences pref;
 
         ImageDownloader imageDownloader = new ImageDownloader(context);
 
         try {
-            jArr = new JSONArray(jsonData);
+            JSONArray jArr = new JSONArray(jsonData);
 
             for (int i = 0; i < jArr.length(); ++i) {
                 JSONObject jObj = jArr.getJSONObject(i);
@@ -68,12 +70,13 @@ public class Dao {
                 imgName = jObj.getString("ImgName");
 
                 if (i == jArr.length() - 1) {
-                    String prefName = context.getResources().getString(R.string.pref_article_number);
-                    pref = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
 
+                    String prefName = context.getResources().getString(R.string.pref_name);
+                    sharedPreferences = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
                     String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
-                    SharedPreferences.Editor editor = pref.edit();
-                    editor.putString(prefArticleNumberKey, "" + articleNumber);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    editor.putString(prefArticleNumberKey, articleNumber + "");
                     editor.commit();
                 }
 
@@ -96,6 +99,7 @@ public class Dao {
             Log.e("test", "JSON ERROR! - " + e);
             e.printStackTrace();
         }
+
     }
 
     public ArrayList<ArticleDTO> getArticleList() {

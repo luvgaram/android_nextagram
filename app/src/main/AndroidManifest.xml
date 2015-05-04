@@ -10,6 +10,16 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+
+        <service
+            android:name="com.example.viz.nextagram.SyncDataService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.viz.nextagram.SyncDataService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".HomeView"
             android:label="@string/app_name">
@@ -34,14 +44,9 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ArticleDTO"
-            android:label="ArticleDTO">
-            <intent-filter>
-                <action android:name=".ArticleDTO" />
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
+
+
+
     </application>
 
 </manifest>

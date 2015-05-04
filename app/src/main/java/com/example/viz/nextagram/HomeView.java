@@ -38,6 +38,9 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         editor.putString(getResources().getString(R.string.server_url), getResources().getString(R.string.server_url_value));
         editor.commit();
 
+        Intent intentSync = new Intent("com.example.viz.nextagram.SyncDataService");
+        startService(intentSync);
+
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button1.setOnClickListener(this);
