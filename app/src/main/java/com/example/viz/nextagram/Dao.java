@@ -41,6 +41,7 @@ public class Dao {
     }
 
     public void insertJsonData(String jsonData) {
+        JSONArray jArr;
         int articleNumber;
         String title;
         String writer;
@@ -50,12 +51,11 @@ public class Dao {
         String imgName;
         SharedPreferences pref;
 
-        FileDownloader fileDownloader = new FileDownloader(context);
+        ImageDownloader imageDownloader = new ImageDownloader(context);
 
         try {
-            JSONArray jArr = new JSONArray(jsonData);
+            jArr = new JSONArray(jsonData);
 
-            //???
             for (int i = 0; i < jArr.length(); ++i) {
                 JSONObject jObj = jArr.getJSONObject(i);
 
@@ -68,13 +68,10 @@ public class Dao {
                 imgName = jObj.getString("ImgName");
 
                 if (i == jArr.length() - 1) {
-                    String prefName = context.getResources().getString(
-                            R.string.pref_name);
-                    pref = context.getSharedPreferences(prefName,
-                            context.MODE_PRIVATE);
+                    String prefName = context.getResources().getString(R.string.pref_article_number);
+                    pref = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
 
-                    String prefArticleNumberKey = context.getResources()
-                            .getString(R.string.pref_article_number);
+                    String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
                     SharedPreferences.Editor editor = pref.edit();
                     editor.putString(prefArticleNumberKey, "" + articleNumber);
                     editor.commit();
@@ -92,7 +89,7 @@ public class Dao {
                     Log.i("insertJSonData: ", "fail");
                     e.printStackTrace();
                 }
-                fileDownloader.downFile(context.getString(R.string.server_url_value) + "/image/" + imgName, imgName); // 확장자 써줘야 하는거 아닌가?
+                imageDownloader.downFile(context.getString(R.string.server_url_value) + "/image/" + imgName, imgName);
             }
 
         } catch (JSONException e) {

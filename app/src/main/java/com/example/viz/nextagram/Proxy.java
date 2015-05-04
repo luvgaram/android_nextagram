@@ -26,7 +26,9 @@ public class Proxy {
     public String getJSON() {
 
         try {
-            String serverUrl = this.serverUrl + "/loadData/";
+            String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
+            String articleNumber = pref.getString(prefArticleNumberKey, "0");
+            String serverUrl = this.serverUrl + "/loadData/?ArticleNumber=" + articleNumber;
             URL url = new URL (serverUrl);
 //            URL url = new URL("http://127.0.0.1:5009/loadData");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();

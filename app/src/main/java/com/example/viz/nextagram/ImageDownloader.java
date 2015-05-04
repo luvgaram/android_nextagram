@@ -13,11 +13,11 @@ import java.io.File;
 /**
  * Created by viz on 2015. 3. 27..
  */
-public class FileDownloader {
+public class ImageDownloader {
     private final Context context;
     private static AsyncHttpClient client = new AsyncHttpClient();
 
-    public FileDownloader(Context context) {
+    public ImageDownloader(Context context) {
         this.context = context;
     }
 
