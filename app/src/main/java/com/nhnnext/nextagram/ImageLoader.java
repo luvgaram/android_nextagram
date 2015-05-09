@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;

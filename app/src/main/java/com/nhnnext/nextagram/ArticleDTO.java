@@ -1,8 +1,5 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
-/**
- * Created by viz on 2015. 3. 18..
- */
 public class ArticleDTO {
 
     private int articleNumber;

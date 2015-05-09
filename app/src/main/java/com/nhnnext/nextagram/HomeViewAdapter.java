@@ -1,12 +1,10 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
 public class HomeViewAdapter extends CursorAdapter {

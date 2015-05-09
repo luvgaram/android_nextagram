@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

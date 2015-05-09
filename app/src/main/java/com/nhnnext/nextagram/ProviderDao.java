@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -14,9 +14,6 @@ import org.json.JSONObject;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 
-/**
- * Created by viz on 2015. 3. 16..
- */
 public class ProviderDao {
     private Context context;
     private SQLiteDatabase database;

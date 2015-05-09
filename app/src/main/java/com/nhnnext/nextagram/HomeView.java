@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,7 +39,7 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         editor.putString(getResources().getString(R.string.server_url), getResources().getString(R.string.server_url_value));
         editor.commit();
 
-        Intent intentSync = new Intent("com.example.viz.nextagram.SyncDataService");
+        Intent intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
         startService(intentSync);
 
         button1 = (Button) findViewById(R.id.button1);
@@ -51,10 +51,7 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     @Override
     protected void onResume() {
         super.onResume();
-
-        // 서버에서 데이터를 가져와서 db에 넣는 부분
         refreshData();
-        // db로부터 게시판 글을 가져와서 리스트에 넣는 부분
     }
 
     private void refreshData() {

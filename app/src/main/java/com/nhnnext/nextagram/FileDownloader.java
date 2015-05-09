@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.content.Context;
 import android.util.Log;
@@ -10,9 +10,6 @@ import org.apache.http.Header;
 
 import java.io.File;
 
-/**
- * Created by viz on 2015. 3. 27..
- */
 public class FileDownloader {
     private final Context context;
     private static AsyncHttpClient client = new AsyncHttpClient();

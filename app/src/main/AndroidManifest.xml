@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.viz.nextagram">
+    package="com.nhnnext.nextagram">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -12,25 +12,25 @@
         android:theme="@style/AppTheme">
 
         <service
-            android:name="com.example.viz.nextagram.SyncDataService"
+            android:name="com.nhnnext.nextagram.SyncDataService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.example.viz.nextagram.SyncDataService" />
+                <action android:name="com.nhnnext.nextagram.SyncDataService" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
         
         <provider
-            android:authorities="com.example.viz.nextagram"
-            android:name=".NextagramProvider"
+            android:authorities="com.nhnnext.nextagram"
+            android:name="com.nhnnext.nextagram.NextagramProvider"
             android:enabled="true"
             android:exported="true"
             android:grantUriPermissions="true"
-            android:readPermission="com.example.viz.nextagram.READ"
-            android:writePermission="com.example.viz.nextagram.WRITE" />
+            android:readPermission="com.nhnnext.nextagram.READ"
+            android:writePermission="com.nhnnext.nextagram.WRITE" />
 
         <activity
-            android:name=".HomeView"
+            android:name="com.nhnnext.nextagram.HomeView"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WritingArticleView"
+            android:name="com.nhnnext.nextagram.WritingArticleView"
             android:label="ArticleWrite">
             <intent-filter>
                 <action android:name=".WritingArticleView" />
@@ -46,15 +46,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ArticleView"
+            android:name="com.nhnnext.nextagram.ArticleView"
             android:label="ArticleView">
             <intent-filter>
                 <action android:name=".ArticleView" />
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
-
 
     </application>
 

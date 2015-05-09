@@ -1,4 +1,4 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
 
 // provider에 접근하기 위한 API
 public class NextagramContract {
-    public static final String AUTHORITY = "com.example.viz.nextagram";
+    public static final String AUTHORITY = "com.nhnnext.nextagram";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     public static final class Articles implements BaseColumns {

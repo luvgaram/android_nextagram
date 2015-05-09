@@ -1,8 +1,6 @@
-package com.example.viz.nextagram;
+package com.nhnnext.nextagram;
 
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
