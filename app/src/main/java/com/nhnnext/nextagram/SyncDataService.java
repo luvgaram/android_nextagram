@@ -35,10 +35,10 @@ public class SyncDataService extends Service {
         mTask = new TimerTask() {
             @Override
             public void run() {
-//                ArrayList<ArticleDTO> articleList = proxy.getArticleDTO();
-//                dao.insertData(articleList);
-                String jsonData = proxy.getJSON();
-                dao.insertJsonData(jsonData);
+                ArrayList<ArticleDTO> articleList = proxy.getArticleDTO();
+                dao.insertData(articleList);
+//                String jsonData = proxy.getJSON();
+//                dao.insertJsonData(jsonData);
             }
         };
 

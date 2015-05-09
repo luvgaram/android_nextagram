@@ -156,7 +156,7 @@ public class ProviderDao {
                 String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                editor.putString(prefArticleNumberKey, (articleNumber - 1) + "");
+                editor.putString(prefArticleNumberKey, articleNumber + "");
                 editor.commit();
             }
 

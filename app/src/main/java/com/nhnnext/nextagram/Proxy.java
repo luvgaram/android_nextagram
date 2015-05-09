@@ -154,7 +154,7 @@ public class Proxy {
 
         try {
             jArr = new JSONArray(jsonData);
-            for (int i = 0; i < jArr.length(); i++) {
+            for (int i = 0; i < jArr.length(); ++i) {
                 JSONObject jObj = jArr.getJSONObject(i);
                 articleNumber = jObj.getInt("ArticleNumber");
                 title = jObj.getString("Title");
