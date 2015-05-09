@@ -3,6 +3,8 @@ package com.nhnnext.nextagram;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 import android.util.Log;
@@ -33,6 +35,8 @@ public class SyncDataService extends Service {
         mTask = new TimerTask() {
             @Override
             public void run() {
+//                ArrayList<ArticleDTO> articleList = proxy.getArticleDTO();
+//                dao.insertData(articleList);
                 String jsonData = proxy.getJSON();
                 dao.insertJsonData(jsonData);
             }

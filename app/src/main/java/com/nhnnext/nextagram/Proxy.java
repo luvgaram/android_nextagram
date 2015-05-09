@@ -4,16 +4,26 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Proxy {
 
     private String serverUrl;
     private SharedPreferences pref;
     private Context context;
+    private static AsyncHttpClient client = new AsyncHttpClient();
 
     public Proxy(Context context) {
         this.context = context;
@@ -28,9 +38,11 @@ public class Proxy {
         try {
             String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
             String articleNumber = pref.getString(prefArticleNumberKey, "0");
+//            String articleNumber = pref.getString(prefArticleNumberKey, "0");
             int num = Integer.parseInt(articleNumber) + 1;
             Log.e("Article Number: " , String.valueOf(num));
-            String serverUrl = this.serverUrl + "/loadData/?ArticleNumber=" + num;
+            String serverUrl = this.serverUrl + "/loadData?ArticleNumber=" + num;
+            Log.e("test", "serverUrl: " + serverUrl);
             URL url = new URL (serverUrl);
 //            URL url = new URL("http://127.0.0.1:5009/loadData");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -68,6 +80,99 @@ public class Proxy {
         }
 
         return null;
-        //TODO: responsecode가 200대 아닐 경우, 200대지만 빈값이 온 경우 어떻게 처리할까?
+    }
+
+
+//    public ArrayList<ArticleDTO> getJSONlist() {
+//
+//        client.get(context.getString(R.string.server_url_value) + "/loadData", new AsyncHttpResponseHandler() {
+//            @Override
+//            public void onSuccess(int t, Header[] headers, byte[] bytes) {
+//                ArrayList<ArticleDTO> articleList = new ArrayList<>();
+//                ArticleDTO articleDTO;
+//                JSONArray jArr;
+//                int articleNumber;
+//                String title;
+//                String writer;
+//                String id;
+//                String content;
+//                String writeDate;
+//                String imgName;
+//
+//                String jsonData = new String(bytes);
+//                Log.i("getJSonData", "success: " + jsonData);
+//                try {
+//                    jArr = new JSONArray(jsonData);
+//                    for (int i = 0; i < jArr.length(); i++) {
+//                        JSONObject jObj = jArr.getJSONObject(i);
+//                        articleNumber = jObj.getInt("ArticleNumber");
+//                        title = jObj.getString("Title");
+//                        writer = jObj.getString("Writer");
+//                        id = jObj.getString("Id");
+//                        content = jObj.getString("Content");
+//                        writeDate = jObj.getString("WriteDate");
+//                        imgName = jObj.getString("ImgName");
+//
+//                        articleDTO = new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName);
+//                        articleList.add(articleDTO);
+//                    }
+//
+//
+//                } catch (NullPointerException e) {
+//                    e.printStackTrace();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
+//                Log.i("getJSonData: ", "fail: " + throwable.getMessage());
+//            }
+//
+//
+//        });
+//
+//        return articleList;
+//    }
+
+    public ArrayList<ArticleDTO> getArticleDTO() {
+        ArrayList<ArticleDTO> articleList = new ArrayList<>();
+
+        JSONArray jArr;
+        int articleNumber;
+        String title;
+        String writer;
+        String id;
+        String content;
+        String writeDate;
+        String imgName;
+
+        String jsonData = getJSON();
+        ArticleDTO articleDTO;
+
+        try {
+            jArr = new JSONArray(jsonData);
+            for (int i = 0; i < jArr.length(); i++) {
+                JSONObject jObj = jArr.getJSONObject(i);
+                articleNumber = jObj.getInt("ArticleNumber");
+                title = jObj.getString("Title");
+                writer = jObj.getString("Writer");
+                id = jObj.getString("Id");
+                content = jObj.getString("Content");
+                writeDate = jObj.getString("WriteDate");
+                imgName = jObj.getString("ImgName");
+
+                articleDTO = new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName);
+                articleList.add(articleDTO);
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return articleList;
     }
 }
