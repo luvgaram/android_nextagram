@@ -6,32 +6,33 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Write"
+        android:text="@string/write"
         android:textAllCaps="false"
         android:id="@+id/write_upload_button" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="작성자명"
+        android:hint="@string/author"
         android:id="@+id/write_writer" />
 
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:id="@+id/write_image_button" />
+        android:id="@+id/write_image_button"
+        android:contentDescription="@string/photo_button"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="제목"
+        android:hint="@string/title"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:id="@+id/write_title" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:hint="본문 내용"
+        android:hint="@string/detail"
         android:gravity="top"
         android:textAppearance="@android:style/TextAppearance.Medium"
         android:id="@+id/write_content" />

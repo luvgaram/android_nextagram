@@ -6,23 +6,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        style="?android:attr/buttonBarStyle" >
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/btn_write"
-            android:text="Write"
-            android:textAllCaps="false" />
+            android:text="@string/write"
+            android:textAllCaps="false"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="#ddd"
+            android:layout_margin="2dp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/btn_refresh"
-            android:text="Refresh"
-            android:textAllCaps="false" />
+            android:text="@string/refresh"
+            android:textAllCaps="false"
+            style="?android:attr/buttonBarButtonStyle"
+            android:background="#ddd"
+            android:layout_margin="2dp" />
 
 
     </LinearLayout>

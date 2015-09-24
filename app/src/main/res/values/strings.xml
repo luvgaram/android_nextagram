@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">Nextagram</string>
-
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="button1_text">Write</string>
-    <string name="title_activity_write">WriteActivity</string>
-    <string name="title_activity_viewer">ViewerActivity</string>
     <string name="server_url">server_url</string>
     <string name="server_url_value">http://54.64.250.239:5009</string>
     <string name="pref_name">AndroidBasicPref</string>
     <string name="pref_article_number">ArticleNumber</string>
+    <string name="write">Write</string>
+    <string name="refresh">Refresh</string>
+    <string name="author">작성자명</string>
+    <string name="title">제목</string>
+    <string name="detail">본문 내용</string>
+    <string name="thumb_nail">thumbnail</string>
+    <string name="photo">photo</string>
+    <string name="photo_button">photo button</string>
+
 </resources>

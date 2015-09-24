@@ -3,14 +3,12 @@ package com.nhnnext.nextagram;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-/**
- * Created by eunjooim on 15. 5. 5..
- */
+// Created by eunjooim on 15. 5. 5.
 
 // provider에 접근하기 위한 API
-public class NextagramContract {
+class NextagramContract {
     public static final String AUTHORITY = "com.nhnnext.nextagram";
-    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
+    private static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
 
     public static final class Articles implements BaseColumns {
         public static final String _ID = "_id";

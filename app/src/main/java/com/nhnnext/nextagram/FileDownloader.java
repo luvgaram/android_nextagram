@@ -3,7 +3,6 @@ package com.nhnnext.nextagram;
 import android.content.Context;
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
 import com.loopj.android.http.SyncHttpClient;
 
@@ -11,9 +10,9 @@ import org.apache.http.Header;
 
 import java.io.File;
 
-public class FileDownloader {
+class FileDownloader {
     private final Context context;
-    private static SyncHttpClient client = new SyncHttpClient();
+    private static final SyncHttpClient client = new SyncHttpClient();
 
     public FileDownloader(Context context) {
         this.context = context;
@@ -37,7 +36,8 @@ public class FileDownloader {
                 public void onSuccess(int i, Header[] headers, File file) {
                     Log.i("FileDownloader", "success responsePath: " + file.getAbsolutePath());
                     Log.i("FileDownloader", "success originalPath: " + filePath.getAbsolutePath());
-                    file.renameTo(filePath);
+                    boolean result = file.renameTo(filePath);
+                    Log.i("FileDownloader", "renaming result: " + result);
                 }
             });
         }

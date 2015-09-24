@@ -1,5 +1,6 @@
 package com.nhnnext.nextagram;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,22 +8,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.net.URLDecoder;
 import java.util.ArrayList;
 
-public class ProviderDao {
-    private Context context;
-    private SQLiteDatabase database;
-    private SharedPreferences sharedPreferences;
+class ProviderDao {
+    private final Context context;
 
     public ProviderDao(Context context) {
         this.context = context;
 
-        database = context.openOrCreateDatabase("LocalDATA.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
+        SQLiteDatabase database = context.openOrCreateDatabase("LocalDATA.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
 
         try {
             String sql = "CREATE TABLE IF NOT EXISTS Articles (ID integer primary key autoincrement," +
@@ -40,90 +35,7 @@ public class ProviderDao {
         }
     }
 
-    public void insertJsonData(String jsonData) {
-        // 예외처리.. 용빈이꺼는 필요 없던데 왜 이러는지...;
-        if (jsonData == null) { return; }
-
-        int articleNumber;
-        String title;
-        String writer;
-        String id;
-        String content;
-        String writeDate;
-        String imgName;
-
-        FileDownloader fileDownloader = new FileDownloader(context);
-
-        try {
-            JSONArray jArr = new JSONArray(jsonData);
-
-            for (int i = 0; i < jArr.length(); ++i) {
-                JSONObject jObj = jArr.getJSONObject(i);
-
-                articleNumber = jObj.getInt("ArticleNumber");
-                title = jObj.getString("Title");
-                writer = jObj.getString("Writer");
-                id = jObj.getString("Id");
-                content = jObj.getString("Content");
-                writeDate = jObj.getString("WriteDate");
-                imgName = jObj.getString("ImgName");
-
-                if (i == jArr.length() - 1) {
-
-                    String prefName = context.getResources().getString(R.string.pref_name);
-                    sharedPreferences = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
-                    String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    editor.putString(prefArticleNumberKey, articleNumber + "");
-                    editor.commit();
-                }
-
-//                Log.i("test", "ArticleNumber: " + articleNumber + " Title: " + title);
-//
-//                String sql = "INSERT OR REPLACE INTO Articles(ArticleNumber, Title, WriterName, WriterID,Content, WriteDate, ImgName)" + " VALUES(" + articleNumber + ",'" +
-//                        title + "','" + writer + "','" + id + "','" + content + "','" + writeDate + "','" + imgName + "');";
-//
-//                try {
-//                    database.execSQL(sql);
-//                    Log.i("insertJSonData: ", "success");
-//                } catch (Exception e) {
-//                    Log.i("insertJSonData: ", "fail");
-//                    e.printStackTrace();
-//                }
-
-                try {
-                    title = URLDecoder.decode(title, "UTF-8");
-                    writer = URLDecoder.decode(writer, "UTF-8");
-                    id = URLDecoder.decode(id, "UTF-8");
-                    content = URLDecoder.decode(content, "UTF-8");
-                    writeDate = URLDecoder.decode(writeDate, "UTF-8");
-                    imgName = URLDecoder.decode(imgName, "UTF-8");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-                ContentValues values = new ContentValues();
-                values.put("_id", articleNumber);
-                values.put("Title", title);
-                values.put("Writer", writer);
-                values.put("Id", id);
-                values.put("Content", content);
-                values.put("WriteDate", writeDate);
-                values.put("ImgName", imgName);
-
-                context.getContentResolver().insert(NextagramContract.Articles.CONTENT_URI, values);
-
-                fileDownloader.downFile(context.getString(R.string.server_url_value) + "/image/" + imgName, imgName);
-            }
-
-        } catch (JSONException e) {
-            Log.e("test", "JSON ERROR! - " + e);
-            e.printStackTrace();
-        }
-
-    }
-
+    @SuppressLint("CommitPrefEdits")
     public void insertData(ArrayList<ArticleDTO> articleList) {
 
         int articleNumber;
@@ -152,12 +64,12 @@ public class ProviderDao {
             if (i == articleList.size() - 1) {
 
                 String prefName = context.getResources().getString(R.string.pref_name);
-                sharedPreferences = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
                 String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                 editor.putString(prefArticleNumberKey, articleNumber + "");
-                editor.commit();
+                editor.apply();
             }
 
 
@@ -186,62 +98,6 @@ public class ProviderDao {
             fileDownloader.downFile(context.getString(R.string.server_url_value) + "/image/" + imgName, imgName);
         }
 
-    }
-
-    public ArrayList<ArticleDTO> getArticleList() {
-
-        ArrayList<ArticleDTO> articleList = new ArrayList<ArticleDTO>();
-
-        int articleNumber;
-        String title;
-        String writer;
-        String id;
-        String content;
-        String writeDate;
-        String imgName;
-
-        Cursor cursor = context.getContentResolver().query(
-                NextagramContract.Articles.CONTENT_URI,
-                NextagramContract.Articles.PROJECTION_ALL, null, null,
-                NextagramContract.Articles._ID + " ASC"
-        );
-
-//        String sql = "SELECT * FROM Articles;";
-//        Cursor cursor = database.rawQuery(sql, null);
-
-        if (cursor != null) {
-            cursor.moveToFirst();
-            while (!(cursor.isAfterLast())) {
-                articleNumber = cursor.getInt(0);
-                title = cursor.getString(1);
-                writer = cursor.getString(2);
-                id = cursor.getString(3);
-                content = cursor.getString(4);
-                writeDate = cursor.getString(5);
-                imgName = cursor.getString(6);
-                articleList.add(new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName));
-
-                cursor.moveToNext();
-            }
-        }
-
-
-//        while (cursor.moveToNext()) {
-//            articleNumber = cursor.getInt(1);
-//            title = cursor.getString(2);
-//            writer = cursor.getString(3);
-//            id = cursor.getString(4);
-//            content = cursor.getString(5);
-//            writeDate = cursor.getString(6);
-//            imgName = cursor.getString(7);
-//
-//            ArticleDTO article = new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName);
-//            articleList.add(article);
-//        }
-
-        cursor.close();
-
-        return articleList;
     }
 
     public ArticleDTO getArticleByArticleNumber(int articleNumber) {
@@ -278,6 +134,7 @@ public class ProviderDao {
             article = new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName);
         }
 
+        assert cursor != null;
         cursor.close();
         return article;
     }

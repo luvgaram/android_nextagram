@@ -1,7 +1,6 @@
 package com.nhnnext.nextagram;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,24 +12,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
-import java.util.ArrayList;
 
-public class HomeViewAdapter extends CursorAdapter {
-    private int layoutResourceId;
-    private ArrayList<ArticleDTO> articleDTOData;
-    private Context context;
-    private Cursor cursor;
-    private SharedPreferences pref;
-    private LayoutInflater mLayoutInflater;
+class HomeViewAdapter extends CursorAdapter {
+    private final int layoutResourceId;
+    private final LayoutInflater mLayoutInflater;
 
-    public HomeViewAdapter(Context context, Cursor cursor, int layoutResourceId) {
-        super(context, cursor, layoutResourceId);
-        this.context = context;
-        this.cursor = cursor;
-        this.layoutResourceId = layoutResourceId;
-        pref = context.getSharedPreferences(
-                context.getString(R.string.pref_name), context.MODE_PRIVATE
-        );
+    public HomeViewAdapter(Context context, Cursor cursor) {
+        super(context, cursor, R.layout.custom_list_row);
+        this.layoutResourceId = R.layout.custom_list_row;
+//        SharedPreferences pref = context.getSharedPreferences(
+//                context.getString(R.string.pref_name), Context.MODE_PRIVATE
+//        );
         mLayoutInflater = LayoutInflater.from(context);
     }
 
@@ -71,58 +63,11 @@ public class HomeViewAdapter extends CursorAdapter {
         File img_load_path = new File(imgPath);
         if (img_load_path.exists()) {
             BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPurgeable = true;
+//            options.inPurgeable = true;
 
             Bitmap bitmap = BitmapFactory.decodeFile(imgPath, options);
             viewHolder.imageView.setImageBitmap(bitmap);
         }
     }
 
-//    @Override
-//    public View getView(int position, View convertView, ViewGroup parent) {
-//        View row = convertView;
-//
-//        // 해당 row의 레이아웃 그려주기
-//        if (row == null) {
-//            LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-//            row = inflater.inflate(layoutResourceId, parent, false);
-//        }
-//
-//        // 해당 row의 텍스트들 넣어주기
-//        TextView tvTitle = (TextView) row.findViewById(R.id.customlist_textview1);
-//        TextView tvContent = (TextView) row.findViewById(R.id.customlist_textview2);
-//        tvTitle.setText(articleData.get(position).getTitle());
-//        tvContent.setText(articleData.get(position).getContent());
-//
-//        // 해당 row의 이미지 넣어주기
-//        ImageView imageView = (ImageView) row.findViewById(R.id.customlist_imageview);
-//        WeakReference<ImageView> imageViewReference = new WeakReference<ImageView>(imageView);
-//
-//        String imgPath = context.getFilesDir().getPath() + "/" + articleData.get(position).getImgName();
-//
-//        Bitmap bitmap = ImageLoader.getInstance().get(imgPath);
-//        if (bitmap != null) {
-//            Log.e("result", "getCache");
-//            imageViewReference.get().setImageBitmap(bitmap);
-//        } else {
-//            Log.e("result", "putCache");
-//            File imgLoadPath = new File(imgPath);
-//
-//            if (imgLoadPath.exists()) {
-//                BitmapFactory.Options options = new BitmapFactory.Options();
-//                options.inSampleSize = 2;
-//                options.inPurgeable = true;
-//
-//                bitmap = BitmapFactory.decodeFile(imgPath, options);
-//                ImageLoader.getInstance().put(imgPath, bitmap);
-//
-//                // Bitmap resized = Bitmap.createScaledBitmap(bitmap, 1000, 1000, true);
-//                imageViewReference.get().setImageBitmap(bitmap);
-//            } else {
-//                Log.e("viewImage", "fail: file not found");
-//            }
-//        }
-//
-//        return row;
-//    }
 }

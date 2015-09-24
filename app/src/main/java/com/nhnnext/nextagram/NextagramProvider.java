@@ -12,9 +12,8 @@ import android.text.TextUtils;
 
 import java.util.Locale;
 
-/**
- * Created by eunjooim on 15. 5. 5..
- */
+// Created by eunjooim on 15. 5. 5..
+
 public class NextagramProvider extends ContentProvider {
 
     private Context context;

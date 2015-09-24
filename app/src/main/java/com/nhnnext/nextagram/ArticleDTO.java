@@ -2,13 +2,13 @@ package com.nhnnext.nextagram;
 
 public class ArticleDTO {
 
-    private int articleNumber;
-    private String title;
-    private String writer;
-    private String id;
-    private String content;
-    private String writeDate;
-    private String imgName;
+    private final int articleNumber;
+    private final String title;
+    private final String writer;
+    private final String id;
+    private final String content;
+    private final String writeDate;
+    private final String imgName;
 
     public ArticleDTO(int articleNumber, String title, String writer, String id, String content, String writeDate, String imgName) {
         this.articleNumber = articleNumber;

@@ -14,10 +14,8 @@ import android.widget.ListView;
 
 public class HomeView extends Activity implements AdapterView.OnItemClickListener, OnClickListener {
 
-//    private static AsyncHttpClient client = new AsyncHttpClient();
-    private Button button1;
-    private Button button2;
     private HomeController homeController;
+    private Cursor mCursor;
 //    private ArrayList<ArticleDTO> articleList;
 //    private SharedPreferences pref;
 
@@ -38,8 +36,8 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
 //        Intent intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
 //        startService(intentSync);
 
-        button1 = (Button) findViewById(R.id.btn_write);
-        button2 = (Button) findViewById(R.id.btn_refresh);
+        Button button1 = (Button) findViewById(R.id.btn_write);
+        Button button2 = (Button) findViewById(R.id.btn_refresh);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
@@ -74,15 +72,16 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     private void setListView() {
         ListView listView = (ListView) findViewById(R.id.customlist_listview);
 
-        Cursor mCursor = getContentResolver().query(
+        mCursor = getContentResolver().query(
                 NextagramContract.Articles.CONTENT_URI,
                 NextagramContract.Articles.PROJECTION_ALL, null, null,
                 NextagramContract.Articles._ID + " asc"
         );
 
-        HomeViewAdapter customAdapter = new HomeViewAdapter(this, mCursor, R.layout.custom_list_row);
+        HomeViewAdapter customAdapter = new HomeViewAdapter(this, mCursor);
         listView.setAdapter(customAdapter);
         listView.setOnItemClickListener(this);
+
     }
 
     @Override
@@ -106,5 +105,11 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         intent.putExtra("ArticleNumber", ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
         Log.i("test", "ArticleNumber: " + ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mCursor.close();
     }
 }

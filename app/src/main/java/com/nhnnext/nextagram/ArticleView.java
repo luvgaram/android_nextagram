@@ -15,9 +15,6 @@ import java.lang.ref.WeakReference;
 
 public class ArticleView extends Activity {
 
-    private ImageView ivImage;
-    private WeakReference<ImageView> imageViewReference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,12 +25,13 @@ public class ArticleView extends Activity {
         TextView tvContent = (TextView) findViewById(R.id.viewer_content);
         TextView tvWriteTime = (TextView) findViewById(R.id.viewer_write_time);
 
-        ivImage = (ImageView) findViewById(R.id.viewer_image_view);
-        imageViewReference = new WeakReference<ImageView>(ivImage);
+        ImageView ivImage = (ImageView) findViewById(R.id.viewer_image_view);
+        WeakReference<ImageView> imageViewReference = new WeakReference<>(ivImage);
 
         String articleNumber = getIntent().getExtras().getString("ArticleNumber");
 
         ProviderDao dao = new ProviderDao(getApplicationContext());
+        assert (articleNumber) != null;
         ArticleDTO article = dao.getArticleByArticleNumber(Integer.parseInt(articleNumber));
 
         tvTitle.setText(article.getTitle());
@@ -61,7 +59,7 @@ public class ArticleView extends Activity {
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inSampleSize = 2; // n개의 픽셀을 1개의 픽셀로 decode한다는 뜻
                     // 2의 지수값을 넣는 것이 decode 속도가 빠르다
-                    options.inPurgeable = true; // 롤리팝부터 메모리구조 바뀌면서 deprecated됨
+//                    options.inPurgeable = true; // 롤리팝부터 메모리구조 바뀌면서 deprecated됨
                     // 메모리 부족할 때 시스템이 가져다 쓸 수 있다고 체크해주는 것
 
                     bitmap = BitmapFactory.decodeFile(imgPath, options);
@@ -72,7 +70,6 @@ public class ArticleView extends Activity {
                     // inSampleSize를 조정함으로써 파일 크기가 줄어들긴 했지만, 동시에 사이즈도 줄어들었다
                     // 따라서 사용할 크기에 맞춰 resize 해줘야 한다 (bitmap, width, height, filter)
                     // width와 height는 픽셀 값임
-                    // TODO: filter가 뭐지? 무슨 역할?
 
                     imageViewReference.get().setImageBitmap(bitmap);
                 } else {

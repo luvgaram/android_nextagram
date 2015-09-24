@@ -4,10 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,22 +14,21 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class Proxy {
+class Proxy {
 
-    private String serverUrl;
-    private SharedPreferences pref;
-    private Context context;
-    private static AsyncHttpClient client = new AsyncHttpClient();
+    private final String serverUrl;
+    private final SharedPreferences pref;
+    private final Context context;
 
     public Proxy(Context context) {
         this.context = context;
         String prefName = context.getResources().getString(R.string.pref_name);
-        pref = context.getSharedPreferences(prefName, context.MODE_PRIVATE);
+        pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         serverUrl = pref.getString(
                 context.getResources().getString(R.string.server_url), "");
     }
 
-    public String getJSON() {
+    private String getJSON() {
 
         try {
             String prefArticleNumberKey = context.getResources().getString(R.string.pref_article_number);
@@ -69,7 +64,7 @@ public class Proxy {
                     StringBuilder sb = new StringBuilder();
                     String line;
                     while((line = br.readLine()) != null){
-                        sb.append(line + "\n");
+                        sb.append(line).append("\n");
                     }
                     br.close();
                     return sb.toString();
@@ -167,9 +162,7 @@ public class Proxy {
                 articleDTO = new ArticleDTO(articleNumber, title, writer, id, content, writeDate, imgName);
                 articleList.add(articleDTO);
             }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+        } catch (NullPointerException | JSONException e) {
             e.printStackTrace();
         }
 
