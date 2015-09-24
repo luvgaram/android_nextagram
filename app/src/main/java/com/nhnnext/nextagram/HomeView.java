@@ -2,7 +2,6 @@ package com.nhnnext.nextagram;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,13 +10,6 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
-import org.apache.http.Header;
-
-import java.util.ArrayList;
 
 
 public class HomeView extends Activity implements AdapterView.OnItemClickListener, OnClickListener {
@@ -46,8 +38,8 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
 //        Intent intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
 //        startService(intentSync);
 
-        button1 = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button2);
+        button1 = (Button) findViewById(R.id.btn_write);
+        button2 = (Button) findViewById(R.id.btn_refresh);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
@@ -96,11 +88,11 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     @Override
     public void onClick(View arg0) {
         switch (arg0.getId()) {
-            case R.id.button1:
+            case R.id.btn_write:
                 Intent intentWrite = new Intent(".WritingArticleView");
                 startActivity(intentWrite);
                 break;
-            case R.id.button2:
+            case R.id.btn_refresh:
                 homeController.refreshData();
                 break;
         }

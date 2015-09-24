@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
+import com.loopj.android.http.SyncHttpClient;
 
 import org.apache.http.Header;
 
@@ -12,7 +13,7 @@ import java.io.File;
 
 public class FileDownloader {
     private final Context context;
-    private static AsyncHttpClient client = new AsyncHttpClient();
+    private static SyncHttpClient client = new SyncHttpClient();
 
     public FileDownloader(Context context) {
         this.context = context;
