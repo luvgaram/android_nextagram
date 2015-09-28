@@ -16,16 +16,29 @@ import java.util.ArrayList;
 
 class Proxy {
 
-    private final String serverUrl;
-    private final SharedPreferences pref;
+    private String serverUrl;
+    private SharedPreferences pref;
     private final Context context;
 
-    public Proxy(Context context) {
+    public Proxy(final Context context) {
         this.context = context;
-        String prefName = context.getResources().getString(R.string.pref_name);
-        pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
-        serverUrl = pref.getString(
-                context.getResources().getString(R.string.server_url), "");
+//        String prefName = context.getResources().getString(R.string.pref_name);
+
+        Thread prefThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                String prefName = context.getResources().getString(R.string.pref_name);
+                pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+                serverUrl = pref.getString(
+                        context.getResources().getString(R.string.server_url), "");
+            }
+        });
+
+        prefThread.start();
+//        pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
+//        serverUrl = pref.getString(
+//                context.getResources().getString(R.string.server_url), "");
     }
 
     private String getJSON() {

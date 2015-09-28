@@ -67,6 +67,7 @@ class HomeViewAdapter extends CursorAdapter {
 
             Bitmap bitmap = BitmapFactory.decodeFile(imgPath, options);
             viewHolder.imageView.setImageBitmap(bitmap);
+
         }
     }
 

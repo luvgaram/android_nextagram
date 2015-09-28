@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,25 +17,48 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
 
     private HomeController homeController;
     private Cursor mCursor;
-//    private ArrayList<ArticleDTO> articleList;
-//    private SharedPreferences pref;
+    private Thread contThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // strict mode 적용
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads()
+                .detectDiskWrites()
+                .detectNetwork()   // or .detectAll() for all detectable problems
+                .permitNetwork()
+                .permitDiskReads()
+                .permitDiskWrites()
+                .penaltyLog()
+                .penaltyDropBox()
+                .build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectLeakedSqlLiteObjects()
+                .detectLeakedClosableObjects()
+                .penaltyLog()
+                .penaltyDeath()
+                .build());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        homeController = new HomeController(getApplicationContext());
-        homeController.initSharedPreferences();
-        homeController.startSyncDataService();
 
-//        pref = getSharedPreferences(getResources().getString(R.string.pref_name), MODE_PRIVATE);
-//        SharedPreferences.Editor editor = pref.edit();
-//
-//        editor.putString(getResources().getString(R.string.server_url), getResources().getString(R.string.server_url_value));
-//        editor.commit();
-//
-//        Intent intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
-//        startService(intentSync);
+        contThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                homeController = new HomeController(getApplicationContext());
+                homeController.initSharedPreferences();
+                homeController.startSyncDataService();
+                homeController.refreshData();
+            }
+        });
+
+        contThread.start();
+
+//        homeController = new HomeController(getApplicationContext());
+//        homeController.initSharedPreferences();
+//        homeController.startSyncDataService();
 
         Button button1 = (Button) findViewById(R.id.btn_write);
         Button button2 = (Button) findViewById(R.id.btn_refresh);
@@ -47,27 +71,10 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     @Override
     protected void onResume() {
         super.onResume();
-        homeController.refreshData();
-    }
 
-//    private void refreshData() {
-//        client.get(getString(R.string.server_url_value) + "/loadData", new AsyncHttpResponseHandler() {
-//            @Override
-//            public void onSuccess(int i, Header[] headers, byte[] bytes) {
-//                String jsonData = new String(bytes);
-//                Log.i("getJSonData", "success: " + jsonData);
-//                ProviderDao dao = new ProviderDao(getApplicationContext());
-//                dao.insertJsonData(jsonData);
-//                // HomeViewAdapter를 CursorAdapter로 변경
-//                setListView(dao.getArticleList());
-//            }
-//
-//            @Override
-//            public void onFailure(int i, Header[] headers, byte[] bytes, Throwable throwable) {
-//                Log.i("getJSonData: ", "fail: " + throwable.getMessage());
-//            }
-//        });
-//    }
+
+//        homeController.refreshData();
+    }
 
     private void setListView() {
         ListView listView = (ListView) findViewById(R.id.customlist_listview);
@@ -100,10 +107,9 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(".ArticleView");
-//        String articleNumber = articleList.get(position).getArticleNumber() + "";
-//        intent.putExtra("ArticleNumber", articleNumber);
+
         intent.putExtra("ArticleNumber", ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
-        Log.i("test", "ArticleNumber: " + ((HomeViewAdapter.ViewHolderItem)view.getTag()).articleNumber);
+        Log.i("test", "ArticleNumber: " + ((HomeViewAdapter.ViewHolderItem) view.getTag()).articleNumber);
         startActivity(intent);
     }
 
@@ -112,4 +118,5 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         super.onDestroy();
         mCursor.close();
     }
+
 }

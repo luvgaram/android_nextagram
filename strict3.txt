@@ -1,0 +1,1088 @@
+Drop box contents: 31 entries
+Searching for: data_app_strictmode
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 1695 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152865
+Loop-Violation-Number: 1
+Duration-Millis: 134
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.app.SharedPreferencesImpl.awaitLoadedLocked(SharedPreferencesImpl.java:203)
+	at android.app.SharedPreferencesImpl.getString(SharedPreferencesImpl.java:223)
+	at com.nhnnext.nextagram.Proxy.<init>(Proxy.java:27)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:19)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2685 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152871
+Loop-Violation-Number: 2
+Duration-Millis: 128
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setPageSize(SQLiteConnection.java:251)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:213)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2708 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152873
+Loop-Violation-Number: 3
+Duration-Millis: 126
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setForeignKeyModeFromConfiguration(SQLiteConnection.java:281)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:214)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2790 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152874
+Loop-Violation-Number: 4
+Duration-Millis: 125
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setJournalMode(SQLiteConnection.java:320)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:294)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2790 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152875
+Loop-Violation-Number: 5
+Duration-Millis: 124
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setJournalMode(SQLiteConnection.java:323)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:294)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2787 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152875
+Loop-Violation-Number: 6
+Duration-Millis: 124
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setSyncMode(SQLiteConnection.java:301)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:295)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2693 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152879
+Loop-Violation-Number: 7
+Duration-Millis: 120
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setJournalSizeLimit(SQLiteConnection.java:271)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:216)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2693 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152880
+Loop-Violation-Number: 8
+Duration-Millis: 119
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setJournalSizeLimit(SQLiteConnection.java:273)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:216)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2699 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152881
+Loop-Violation-Number: 9
+Duration-Millis: 118
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setAutoCheckpointInterval(SQLiteConnection.java:261)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:217)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2700 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 152882
+Loop-Violation-Number: 10
+Duration-Millis: 117
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setAutoCheckpointInterval(SQLiteConnection.java:263)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:217)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2408 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153079
+Loop-Violation-Number: 1
+Duration-Millis: 36
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setPageSize(SQLiteConnection.java:251)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:213)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2513 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153098
+Loop-Violation-Number: 3
+Duration-Millis: 17
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setJournalMode(SQLiteConnection.java:320)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:294)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2431 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153080
+Loop-Violation-Number: 2
+Duration-Millis: 35
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setForeignKeyModeFromConfiguration(SQLiteConnection.java:281)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:214)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2415 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153111
+Loop-Violation-Number: 7
+Duration-Millis: 4
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setJournalSizeLimit(SQLiteConnection.java:273)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:216)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2415 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153110
+Loop-Violation-Number: 6
+Duration-Millis: 5
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setJournalSizeLimit(SQLiteConnection.java:271)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:216)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2513 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153099
+Loop-Violation-Number: 4
+Duration-Millis: 16
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setJournalMode(SQLiteConnection.java:323)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:294)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2510 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153103
+Loop-Violation-Number: 5
+Duration-Millis: 12
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForString(SQLiteConnection.java:638)
+	at android.database.sqlite.SQLiteConnection.setSyncMode(SQLiteConnection.java:301)
+	at android.database.sqlite.SQLiteConnection.setWalModeFromConfiguration(SQLiteConnection.java:295)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:215)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2421 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153112
+Loop-Violation-Number: 8
+Duration-Millis: 3
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setAutoCheckpointInterval(SQLiteConnection.java:261)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:217)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2421 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153113
+Loop-Violation-Number: 9
+Duration-Millis: 2
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForLong(SQLiteConnection.java:595)
+	at android.database.sqlite.SQLiteConnection.setAutoCheckpointInterval(SQLiteConnection.java:263)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:217)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:46 data_app_strictmode (text, 2416 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153114
+Loop-Violation-Number: 10
+Duration-Millis: 1
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.execute(SQLiteConnection.java:552)
+	at android.database.sqlite.SQLiteConnection.setLocaleFromConfiguration(SQLiteConnection.java:371)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:218)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.SyncDataService.onCreate(SyncDataService.java:24)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:2558)
+	at android.app.ActivityThread.access$1800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1278)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:47 data_app_strictmode (text, 3287 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153207
+Loop-Violation-Number: 1
+Duration-Millis: 354
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:106)
+	at libcore.io.IoBridge.open(IoBridge.java:393)
+	at java.io.FileInputStream.<init>(FileInputStream.java:78)
+	at java.io.FileInputStream.<init>(FileInputStream.java:105)
+	at android.graphics.BitmapFactory.decodeFile(BitmapFactory.java:375)
+	at com.nhnnext.nextagram.HomeViewAdapter.bindView(HomeViewAdapter.java:68)
+	at android.widget.CursorAdapter.getView(CursorAdapter.java:254)
+	at android.widget.AbsListView.obtainView(AbsListView.java:2255)
+	at android.widget.ListView.measureHeightOfChildren(ListView.java:1263)
+	at android.widget.ListView.onMeasure(ListView.java:1175)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1404)
+	at android.widget.LinearLayout.measureVertical(LinearLayout.java:695)
+	at android.widget.LinearLayout.onMeasure(LinearLayout.java:588)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.FrameLayout.onMeasure(FrameLayout.java:310)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at com.android.internal.widget.ActionBarOverlayLayout.onMeasure(ActionBarOverlayLayout.java:327)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.FrameLayout.onMeasure(FrameLayout.java:310)
+	at com.android.internal.policy.impl.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2291)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:1912)
+	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1109)
+	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1291)
+	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:996)
+	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:5600)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:761)
+	at android.view.Choreographer.doCallbacks(Choreographer.java:574)
+	at android.view.Choreographer.doFrame(Choreographer.java:544)
+	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:747)
+	at android.os.Handler.handleCallback(Handler.java:733)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:47 data_app_strictmode (text, 3446 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153209
+Loop-Violation-Number: 2
+Duration-Millis: 352
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at libcore.io.BlockGuardOs.read(BlockGuardOs.java:148)
+	at libcore.io.IoBridge.read(IoBridge.java:425)
+	at java.io.FileInputStream.read(FileInputStream.java:179)
+	at android.graphics.BitmapFactory.nativeDecodeStream(Native Method)
+	at android.graphics.BitmapFactory.decodeStreamInternal(BitmapFactory.java:620)
+	at android.graphics.BitmapFactory.decodeStream(BitmapFactory.java:596)
+	at android.graphics.BitmapFactory.decodeFile(BitmapFactory.java:376)
+	at com.nhnnext.nextagram.HomeViewAdapter.bindView(HomeViewAdapter.java:68)
+	at android.widget.CursorAdapter.getView(CursorAdapter.java:254)
+	at android.widget.AbsListView.obtainView(AbsListView.java:2255)
+	at android.widget.ListView.measureHeightOfChildren(ListView.java:1263)
+	at android.widget.ListView.onMeasure(ListView.java:1175)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1404)
+	at android.widget.LinearLayout.measureVertical(LinearLayout.java:695)
+	at android.widget.LinearLayout.onMeasure(LinearLayout.java:588)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.FrameLayout.onMeasure(FrameLayout.java:310)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at com.android.internal.widget.ActionBarOverlayLayout.onMeasure(ActionBarOverlayLayout.java:327)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:5125)
+	at android.widget.FrameLayout.onMeasure(FrameLayout.java:310)
+	at com.android.internal.policy.impl.PhoneWindow$DecorView.onMeasure(PhoneWindow.java:2291)
+	at android.view.View.measure(View.java:16497)
+	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:1912)
+	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:1109)
+	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:1291)
+	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:996)
+	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:5600)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:761)
+	at android.view.Choreographer.doCallbacks(Choreographer.java:574)
+	at android.view.Choreographer.doFrame(Choreographer.java:544)
+	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:747)
+	at android.os.Handler.handleCallback(Handler.java:733)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:29:47 data_app_strictmode (text, 2602 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 153578
+Loop-Violation-Number: 1
+Duration-Millis: 0
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.executeForCursorWindow(SQLiteConnection.java:842)
+	at android.database.sqlite.SQLiteSession.executeForCursorWindow(SQLiteSession.java:836)
+	at android.database.sqlite.SQLiteQuery.fillWindow(SQLiteQuery.java:62)
+	at android.database.sqlite.SQLiteCursor.fillWindow(SQLiteCursor.java:144)
+	at android.database.sqlite.SQLiteCursor.getCount(SQLiteCursor.java:133)
+	at android.database.CursorWrapper.getCount(CursorWrapper.java:57)
+	at android.widget.CursorAdapter.getCount(CursorAdapter.java:200)
+	at android.widget.AdapterView$AdapterDataSetObserver.onChanged(AdapterView.java:802)
+	at android.widget.AbsListView$AdapterDataSetObserver.onChanged(AbsListView.java:6287)
+	at android.database.DataSetObservable.notifyChanged(DataSetObservable.java:37)
+	at android.widget.BaseAdapter.notifyDataSetChanged(BaseAdapter.java:50)
+	at android.widget.CursorAdapter$MyDataSetObserver.onChanged(CursorAdapter.java:471)
+	at android.database.DataSetObservable.notifyChanged(DataSetObservable.java:37)
+	at android.database.AbstractCursor.requery(AbstractCursor.java:137)
+	at android.database.sqlite.SQLiteCursor.requery(SQLiteCursor.java:234)
+	at android.database.CursorWrapper.requery(CursorWrapper.java:186)
+	at android.widget.CursorAdapter.onContentChanged(CursorAdapter.java:447)
+	at android.widget.CursorAdapter$ChangeObserver.onChange(CursorAdapter.java:463)
+	at android.database.ContentObserver.onChange(ContentObserver.java:129)
+	at android.database.ContentObserver$NotificationRunnable.run(ContentObserver.java:180)
+	at android.os.Handler.handleCallback(Handler.java:733)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+
+========================================
+2015-09-28 06:44:42 data_app_strictmode (text, 2694 bytes)
+Process: com.nhnnext.nextagram
+Flags: 0xc8be46
+Package: com.nhnnext.nextagram v1 (1.0)
+Build: generic/vbox86tp/vbox86tp:4.4.4/KTU84P/eng.buildbot.20150610.092700:userdebug/test-keys
+System-App: false
+Uptime-Millis: 1048459
+Loop-Violation-Number: 10
+Duration-Millis: 74
+
+android.os.StrictMode$StrictModeDiskReadViolation: policy=151 violation=2
+	at android.os.StrictMode$AndroidBlockGuardPolicy.onReadFromDisk(StrictMode.java:1135)
+	at android.database.sqlite.SQLiteConnection.applyBlockGuardPolicy(SQLiteConnection.java:1041)
+	at android.database.sqlite.SQLiteConnection.execute(SQLiteConnection.java:552)
+	at android.database.sqlite.SQLiteConnection.setLocaleFromConfiguration(SQLiteConnection.java:371)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:218)
+	at android.database.sqlite.SQLiteConnection.open(SQLiteConnection.java:193)
+	at android.database.sqlite.SQLiteConnectionPool.openConnectionLocked(SQLiteConnectionPool.java:463)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:185)
+	at android.database.sqlite.SQLiteConnectionPool.open(SQLiteConnectionPool.java:177)
+	at android.database.sqlite.SQLiteDatabase.openInner(SQLiteDatabase.java:804)
+	at android.database.sqlite.SQLiteDatabase.open(SQLiteDatabase.java:789)
+	at android.database.sqlite.SQLiteDatabase.openDatabase(SQLiteDatabase.java:694)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:960)
+	at android.app.ContextImpl.openOrCreateDatabase(ContextImpl.java:949)
+	at android.content.ContextWrapper.openOrCreateDatabase(ContextWrapper.java:250)
+	at com.nhnnext.nextagram.ProviderDao.<init>(ProviderDao.java:20)
+	at com.nhnnext.nextagram.HomeController.<init>(HomeController.java:20)
+	at com.nhnnext.nextagram.HomeView.onCreate(HomeView.java:43)
+	at android.app.Activity.performCreate(Activity.java:5231)
+	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1087)
+	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2148)
+	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2233)
+	at android.app.ActivityThread.access$800(ActivityThread.java:135)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1196)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5001)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:785)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:601)
+	at dalvik.system.NativeStart.main(Native Method)
+
+

@@ -33,6 +33,9 @@ class ProviderDao {
             Log.e("test", "CREATE TABLE FAILED! - " + e);
             e.printStackTrace();
         }
+
+        // strict mode
+        database.close();
     }
 
     @SuppressLint("CommitPrefEdits")
