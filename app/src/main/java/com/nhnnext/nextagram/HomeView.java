@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -61,7 +63,6 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
         // 배터리 상태 체크
         IntentFilter intentFilter = new IntentFilter("com.nhnnext.nextagram.BATTERY");
 
-        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
         intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
         intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         registerReceiver(brBattery, intentFilter);
@@ -70,20 +71,29 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     BroadcastReceiver brBattery = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            int status = getNetworkInfo();
             String action = intent.getAction();
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
 
-            if (level <= 15 && action.equals(Intent.ACTION_POWER_DISCONNECTED)) {
-                Toast.makeText(context, "배터리가 부족하여 업데이트를 중지합니다", Toast.LENGTH_SHORT).show();
+            if (level <= 15 && action.equals(Intent.ACTION_POWER_DISCONNECTED) && status == 0) {
+                Toast.makeText(context, "배터리가 부족하거나 인터넷 연결이 없어 업데이트를 중지합니다", Toast.LENGTH_SHORT).show();
                 homeController.stopSyncDataService();
-            }
-
-            if (level > 15 || action.equals(Intent.ACTION_POWER_CONNECTED)) {
+            } else {
                 Toast.makeText(context, "데이터를 업데이트합니다", Toast.LENGTH_SHORT).show();
                 homeController.startSyncDataService();
             }
         }
     };
+
+    private int getNetworkInfo() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        // 인터넷 연결이 없거나 모바일인 경우
+        if(networkInfo == null || networkInfo.getType() == 0) return 0;
+        // Wi-Fi
+        else return 1;
+    }
 
     private void setListView() {
         ListView listView = (ListView) findViewById(R.id.customlist_listview);
