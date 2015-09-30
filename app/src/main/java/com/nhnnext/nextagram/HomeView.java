@@ -1,8 +1,12 @@
 package com.nhnnext.nextagram;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -11,54 +15,24 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class HomeView extends Activity implements AdapterView.OnItemClickListener, OnClickListener {
 
     private HomeController homeController;
     private Cursor mCursor;
-    private Thread contThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        // strict mode 적용
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                .detectDiskReads()
-                .detectDiskWrites()
-                .detectNetwork()   // or .detectAll() for all detectable problems
-                .permitNetwork()
-                .permitDiskReads()
-                .permitDiskWrites()
-                .penaltyLog()
-                .penaltyDropBox()
-                .build());
-        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
-                .detectLeakedSqlLiteObjects()
-                .detectLeakedClosableObjects()
-                .penaltyLog()
-                .penaltyDeath()
-                .build());
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        contThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                homeController = new HomeController(getApplicationContext());
-                homeController.initSharedPreferences();
-                homeController.startSyncDataService();
-                homeController.refreshData();
-            }
-        });
-
-        contThread.start();
-
-//        homeController = new HomeController(getApplicationContext());
-//        homeController.initSharedPreferences();
-//        homeController.startSyncDataService();
+        homeController = new HomeController(getApplicationContext());
+        homeController.initSharedPreferences();
+        homeController.startSyncDataService();
+        homeController.refreshData();
 
         Button button1 = (Button) findViewById(R.id.btn_write);
         Button button2 = (Button) findViewById(R.id.btn_refresh);
@@ -72,9 +46,44 @@ public class HomeView extends Activity implements AdapterView.OnItemClickListene
     protected void onResume() {
         super.onResume();
 
-
 //        homeController.refreshData();
+        registerBattery();
+
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(brBattery);
+    }
+
+    private void registerBattery() {
+        // 배터리 상태 체크
+        IntentFilter intentFilter = new IntentFilter("com.nhnnext.nextagram.BATTERY");
+
+        intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
+        intentFilter.addAction(Intent.ACTION_POWER_CONNECTED);
+        intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
+        registerReceiver(brBattery, intentFilter);
+    }
+
+    BroadcastReceiver brBattery = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
+
+            if (level <= 15 && action.equals(Intent.ACTION_POWER_DISCONNECTED)) {
+                Toast.makeText(context, "배터리가 부족하여 업데이트를 중지합니다", Toast.LENGTH_SHORT).show();
+                homeController.stopSyncDataService();
+            }
+
+            if (level > 15 || action.equals(Intent.ACTION_POWER_CONNECTED)) {
+                Toast.makeText(context, "데이터를 업데이트합니다", Toast.LENGTH_SHORT).show();
+                homeController.startSyncDataService();
+            }
+        }
+    };
 
     private void setListView() {
         ListView listView = (ListView) findViewById(R.id.customlist_listview);

@@ -3,6 +3,7 @@ package com.nhnnext.nextagram;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,7 @@ class HomeController {
     private final Context context;
     private final Proxy proxy;
     private final ProviderDao dao;
+    private Intent intentSync;
 
     public HomeController(Context context) {
         this.context = context;
@@ -31,17 +33,19 @@ class HomeController {
     public void refreshData() {
         new Thread() {
             public void run() {
-//                String jsonData = proxy.getJSON();
                 ArrayList<ArticleDTO> articleList = proxy.getArticleDTO();
                 dao.insertData(articleList);
-
             }
         }.start();
     }
 
     public void startSyncDataService() {
-//        Intent intentSync = new Intent (context, SyncDataService.class);
-        Intent intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
+        intentSync = new Intent("com.nhnnext.nextagram.SyncDataService");
         context.startService(intentSync);
+    }
+
+    public void stopSyncDataService() {
+        Log.i("stopservice", "stopservice");
+        context.stopService(intentSync);
     }
 }

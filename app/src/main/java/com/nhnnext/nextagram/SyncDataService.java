@@ -15,6 +15,7 @@ public class SyncDataService extends Service {
     private static final String TAG = SyncDataService.class.getSimpleName();
     private Proxy proxy; // 서버에서 Article들을 받아옴
     private ProviderDao dao; // 받아온 Article들을 DB에 저장
+    private TimerTask mTask;
 
     @Override
     public void onCreate() {
@@ -28,13 +29,11 @@ public class SyncDataService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         // 새 TimerTask를 생성하고 Run 메서드를 override
-        TimerTask mTask = new TimerTask() {
+        mTask = new TimerTask() {
             @Override
             public void run() {
                 ArrayList<ArticleDTO> articleList = proxy.getArticleDTO();
                 dao.insertData(articleList);
-//                String jsonData = proxy.getJSON();
-//                dao.insertJsonData(jsonData);
             }
         };
 
@@ -49,6 +48,7 @@ public class SyncDataService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy");
+        mTask.cancel();
     }
 
     @Override
